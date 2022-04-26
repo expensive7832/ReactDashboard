@@ -1,0 +1,15 @@
+.navbar{
+    background-color: #fff!important;
+}
+.navbar .nav-link{
+    color: #000!important;
+}
+
+.navbar .dropdown .btn-secondary {
+    color: #fff!important; 
+    background-color: inherit!important;
+    border: none!important; 
+}
+.navbar .dropdown .btn-secondary .start-50 {
+   top: .2rem;
+}

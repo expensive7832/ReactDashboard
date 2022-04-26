@@ -1,58 +1,51 @@
 import { Button, Nav, NavItem } from "reactstrap";
-import Logo from "./Logo";
 import { Link, useLocation } from "react-router-dom";
+import Dashboard from "./../assets/images/dashboard.png";
+import app from "./../assets/images/app.png";
+import customer from "./../assets/images/customer.png";
+import home from "./../assets/images/home.png";
+import pay from "./../assets/images/pay.png";
+import settings from "./../assets/images/settings.png";
+import statement from "./../assets/images/statement.png";
 
 const navigation = [
   {
-    title: "Dashboard",
+    title: "Home",
     href: "/starter",
-    icon: "bi bi-speedometer2",
+    icon: home,
   },
   {
-    title: "Alert",
+    title: "Dashboard",
     href: "/alerts",
-    icon: "bi bi-bell",
+    icon: Dashboard,
   },
   {
-    title: "Badges",
+    title: "Apps",
     href: "/badges",
-    icon: "bi bi-patch-check",
+    icon: app,
   },
   {
-    title: "Buttons",
+    title: "Customers",
     href: "/buttons",
-    icon: "bi bi-hdd-stack",
+    icon: customer,
   },
   {
-    title: "Cards",
+    title: "statements",
     href: "/cards",
-    icon: "bi bi-card-text",
+    icon: statement,
   },
   {
-    title: "Grid",
+    title: "Direct Pay",
     href: "/grid",
-    icon: "bi bi-columns",
+    icon: pay,
   },
   {
-    title: "Table",
+    title: "Settings",
     href: "/table",
-    icon: "bi bi-layout-split",
+    icon: settings,
   },
-  {
-    title: "Forms",
-    href: "/forms",
-    icon: "bi bi-textarea-resize",
-  },
-  {
-    title: "Breadcrumbs",
-    href: "/breadcrumbs",
-    icon: "bi bi-link",
-  },
-  {
-    title: "About",
-    href: "/about",
-    icon: "bi bi-people",
-  },
+ 
+
 ];
 
 const Sidebar = () => {
@@ -62,9 +55,8 @@ const Sidebar = () => {
   let location = useLocation();
 
   return (
-    <div className="p-3">
+    <div className="p-2 " >
       <div className="d-flex align-items-center">
-        <Logo />
         <Button
           close
           size="sm"
@@ -80,24 +72,16 @@ const Sidebar = () => {
                 to={navi.href}
                 className={
                   location.pathname === navi.href
-                    ? "text-primary nav-link py-3"
+                    ? "text-primary fw-bold nav-link py-3"
                     : "nav-link text-secondary py-3"
                 }
               >
-                <i className={navi.icon}></i>
+                <img src={navi.icon} />
                 <span className="ms-3 d-inline-block">{navi.title}</span>
               </Link>
             </NavItem>
           ))}
-          <Button
-            color="danger"
-            tag="a"
-            target="_blank"
-            className="mt-3"
-            href="https://www.wrappixel.com/templates/xtreme-react-redux-admin/?ref=33"
-          >
-            Upgrade To Pro
-          </Button>
+        
         </Nav>
       </div>
     </div>
